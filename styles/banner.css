@@ -3,11 +3,25 @@
     color: var(--branco);
     text-align: center;
     padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around ;
 }
 
 .banner__titulo {
     font-size: 18px;
     font-weight: 700;
+}
+
+.btn__menu{
+    background-color: white;
+    color: black;
+    
+}
+
+.btn__menu:hover {
+    color: black; 
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 1024px) {

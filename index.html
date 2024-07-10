@@ -12,42 +12,43 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <title>Formulário de cadastro</title>
 </head>
 
 <body>
     <section class="banner">
-        <h2 class="banner__titulo">Cadastro finalizado</h2>
+        <h2 class="banner__titulo">Tela de login</h2>
     </section>
-    
-    <main class="principal cadastro">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">CEP</th>
-                <th scope="col">Logradouro</th>
-                <th scope="col">Complemento</th>
-                <th scope="col">Bairro</th>
-                <th scope="col">Cidade</th>
-                <th scope="col">Complemento</th>
-                <th scope="col">UF</th>
-                <th scope="col">UF</th>
-                <th scope="col">Número</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
-    </main>
 
-    <script src="./js/tokenjwt.js"></script>
+    <main class="principal">
+        <h2 class="principal__titulo">Dados do login</h2>
+
+        <div class="alert alert-danger d-none" id="alerta-erro" role="alert">
+      </div>
+      
+      <div class="alert alert-success d-none" id="alerta-sucesso" role="alert">
+      </div>
+
+        <form class="principal__formulario" id="formulario" target="_blank"
+            onsubmit="return loginUsuario(event)">
+            
+            <h3 class="principal__subtitulo">Dados pessoais</h3>
+
+            <div class="formulario__campo">
+              <label class="campo__etiqueta" for="nomeUsuario">Nome Usuário</label>
+              <input name="nomeUsuario" id="nomeUsuario" class="campo__escrita" required />
+          </div>
+
+          <div class="formulario__campo">
+            <label class="campo__etiqueta" for="senha">Senha</label>
+            <input name="senha" id="senha" class="campo__escrita" required />
+        </div>
+
+            <input type="submit" value="Login" class="formulario__botao" id="enviar">
+        </form>
+    </main>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/login-usuario.js"></script>
 </body>
 </html>
-

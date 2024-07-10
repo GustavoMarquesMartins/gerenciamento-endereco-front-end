@@ -43,7 +43,7 @@ async function loginUsuario(event) {
     avisoSucesso.style.display = 'block';
     avisoSucesso.classList.remove("d-none");
     setTimeout(() => {
-        window.location.href = "cadastro-finalizado.html";
+        window.location.href = "tela-principal.html";
     }, 1000); // 5000 milissegundos = 5 segundos
 })
   .catch(error => {
