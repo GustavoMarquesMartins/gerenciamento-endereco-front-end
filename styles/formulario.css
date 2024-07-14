@@ -36,11 +36,14 @@
 
 .formulario__campo {
     margin: .6em 3em .6em 0;
-
 }
 
 .formulario__dupla {
     display: flex;
+}
+
+.formulario__link__cadastro{
+    color: var(--laranja);
 }
 
 .formulario__botao {

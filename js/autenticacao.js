@@ -1,8 +1,8 @@
-
-
-
 async function loginUsuario(event) {
   event.preventDefault();
+
+  var avisoErro = document.getElementById("alerta-erro");
+  var avisoSucesso = document.getElementById("alerta-sucesso");
 
   var url = "http://localhost:5041/Autenticacao/";
 
@@ -10,9 +10,6 @@ async function loginUsuario(event) {
       usuario: document.getElementById('nomeUsuario').value,
       senha: document.getElementById('senha').value
   };
-
-  var avisoErro = document.getElementById("alerta-erro");
-  var avisoSucesso = document.getElementById("alerta-sucesso");
 
   // Fazendo a requisição POST com fetch
   fetch(url, {
@@ -42,8 +39,9 @@ async function loginUsuario(event) {
     avisoSucesso.textContent = "Dados enviados com sucesso.";
     avisoSucesso.style.display = 'block';
     avisoSucesso.classList.remove("d-none");
+
     setTimeout(() => {
-        window.location.href = "tela-principal.html";
+        window.location.href = "./index.html";
     }, 1000); // 5000 milissegundos = 5 segundos
 })
   .catch(error => {

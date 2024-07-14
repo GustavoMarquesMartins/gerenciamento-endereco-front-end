@@ -28,7 +28,6 @@ function populateTable(enderecos) {
       const newRow = tableBody.insertRow();
 
       newRow.setAttribute('idEndereco', endereco.id); // Adiciona o atributo idEndereco com o id do endereço
-      newRow.insertCell().textContent = endereco.id;
       newRow.insertCell().textContent = endereco.cep;
       newRow.insertCell().textContent = endereco.logradouro;
       newRow.insertCell().textContent = endereco.complemento || ''; // Use '' se complemento for undefined
@@ -36,20 +35,10 @@ function populateTable(enderecos) {
       newRow.insertCell().textContent = endereco.cidade;
       newRow.insertCell().textContent = endereco.uf;
       newRow.insertCell().textContent = endereco.numero || ''; // Use '' se numero for undefined
+
+      newRow.addEventListener('click', function(){
+        console.log(this.getAttribute('idEndereco'));
+      });
   });
-
-  buscarPorLinhaSelecionada();
 }
-
-function buscarPorLinhaSelecionada(){
-  let linhas = document.querySelectorAll('.table tbody tr');
-
-    linhas.forEach(linha => {
-        linha.addEventListener('click', function() {
-            let idLinha = this.getAttribute('idEndereco');
-            console.log(idLinha)
-        });
-    });
-}
-
 window.addEventListener('load', fetchEnderecos);
